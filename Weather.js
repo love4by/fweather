@@ -9,77 +9,108 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 const weatherOptions = {
     Thunderstorm: {
         iconName: "weather-lightning",
-        gradient: ["#3A6073", "#16222A"]
+        gradient: ["blue", "blue"],
+        title: "Thunderstorm",
+        subtitle: "Today is Thunderstorm"
     },
     Drizzle: {
         iconName: "weather-pouring",
-        gradient: ["#26D0CE", "#1A2980"]
+        gradient: ["blue", "red"],
+        title: "Drizzle",
+        subtitle: "Today is Drizzle"
     },
     Rain: {
         iconName: "weather-rainy",
-        gradient: ["#E5E5BE", "#003973"]
+        gradient: ["red", "yellow"],
+        title: "Rain",
+        subtitle: "Today is Rain"
     },
     Snow: {
         iconName: "weather-snowy",
-        gradient: ["#4DA0B0", "#D39D38"]
+        gradient: ["yellow", "green"],
+        title: "Snow",
+        subtitle: "Today is Snow"
     },
     Atmosphere: {
         iconName: "weather-hail",
-        gradient: ["#4DA0B0", "#D39D38"]
+        gradient: ["green", "black"],
+        title: "Atmosphere",
+        subtitle: "Today is Atmosphere"
     },
     Mist: {
         iconName: "weather-sunset",
-        gradient: ["#4DA0B0", "#D39D38"]
+        gradient: ["black", "yellow"],
+        title: "Mist",
+        subtitle: "Today is Mist"
     },
     Smoke: {
         iconName: "weather-lightning-rainy",
-        gradient: ["#4DA0B0", "#D39D38"]
+        gradient: ["yellow", "blue"],
+        title: "Smoke",
+        subtitle: "Today is Smoke"
     },
     Haze: {
         iconName: "weather-night",
-        gradient: ["#4DA0B0", "#D39D38"]
+        gradient: ["blue", "black"],
+        title: "Haze",
+        subtitle: "Today is Haze"
     },
     Dust: {
         iconName: "weather-partlycloudy",
-        gradient: ["#4DA0B0", "#D39D38"]
+        gradient: ["indigo", "indigo"],
+        title: "Dust",
+        subtitle: "Today is Dust"
     },
     Fog: {
         iconName: "weather-fog",
-        gradient: ["#4DA0B0", "#D39D38"]
+        gradient: ["olive", "olive"],
+        title: "Fog",
+        subtitle: "Today is Fog"
     },
     Sand: {
         iconName: "weather-sunset-down",
-        gradient: ["#4DA0B0", "#D39D38"]
+        gradient: ["pink", "pink"],
+        title: "Sand",
+        subtitle: "Today is Sand"
     },
     Ash: {
         iconName: "weather-sunset-up",
-        gradient: ["#4DA0B0", "#D39D38"]
+        gradient: ["salmon", "salmon"],
+        title: "Ash",
+        subtitle: "Today is Ash"
     },
     Squall: {
         iconName: "weather-hurricane",
-        gradient: ["#4DA0B0", "#D39D38"]
+        gradient: ["tan", "tan"],
+        title: "Squall",
+        subtitle: "Today is Squall"
     },
     Tornado: {
         iconName: "weather-hurricane",
-        gradient: ["#4DA0B0", "#D39D38"]
+        gradient: ["brown", "brown"],
+        title: "Tornado",
+        subtitle: "Today is Tornado"
     },
     Clear: {
         iconName: "weather-sunny",
-        gradient: ["#4DA0B0", "#D39D38"]
+        gradient: ["orange", "orange"],
+        title: "Clear",
+        subtitle: "Today is Clear"
     },
     Clouds: {
         iconName: "weather-cloudy",
-        gradient: ["#4DA0B0", "#D39D38"]
+        gradient: ["gray", "gray"],
+        title: "Clouds",
+        subtitle: "Today is Clouds"
     }
 
 }
 
 
 export default function Weather({ temp, condition }){
+    console.log(condition);
     return (
         
-            
-
               <LinearGradient 
                 colors={weatherOptions[condition].gradient} 
                 style={styles.container}
@@ -97,8 +128,8 @@ export default function Weather({ temp, condition }){
                         <Text style={styles.temp}>{temp}º</Text>
                     </View>
                     <View style={{ ...styles.halfContainer, ...styles.textContainer}}>
-                        <Text style={styles.title}>In case this is too long</Text>
-                        <Text style={styles.subtitle}>and this one as well then?</Text>
+                        <Text style={styles.title}>{weatherOptions[condition].title}</Text>
+                        <Text style={styles.subtitle}>{weatherOptions[condition].subtitle}</Text>
                     </View>
 
                </LinearGradient>
