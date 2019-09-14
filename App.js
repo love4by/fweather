@@ -27,16 +27,13 @@ export default class extends React.Component {
     
       this.setState({
       isLoading: false,
-      //condition: weather[0].main,
-      condition: "Rain",
+      condition: weather[0].main,
       temp
-           
-
       });
 
-      console.log(temp);
-      console.log(weather);
-      console.log(condition);
+      //console.log(temp);
+      //console.log(weather);
+
   };
   
 
